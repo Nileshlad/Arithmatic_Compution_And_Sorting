@@ -2,7 +2,7 @@
 echo "--------------------------------Arithmetic Compution And Sorting ----------------------------------"
 
 #TO DECLEAR THE DICTIONARY
-declare -A ArithmaticOperation
+declare -A arithmaticOperation
 
 #TO TAKING INPUT FROM USER
 read -p "Enter first input :" firstInput
@@ -23,8 +23,8 @@ resultThree=`echo "scale=2;$firstInput % $secondInput + $thirdInput" | bc`
 echo "Result:" $resultThree
 
 #TO STORE THE DICTIONARY
-ArithmaticOperation[result]=$result
-ArithmaticOperation[resultOne]=$resultOne
-ArithmaticOperation[resultTwo]=$resultTwo
-ArithmaticOperation[resultThree]=$resultThree
+arithmaticOperation[result]=$result
+arithmaticOperation[resultOne]=$resultOne
+arithmaticOperation[resultTwo]=$resultTwo
+arithmaticOperation[resultThree]=$resultThree
 
