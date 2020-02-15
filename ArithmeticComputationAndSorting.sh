@@ -1,6 +1,9 @@
 #!/bin/bash -x
 echo "--------------------------------Arithmetic Compution And Sorting ----------------------------------"
 
+#TO DECLEAR THE DICTIONARY
+declare -A ArithmaticOperation
+
 #TO TAKING INPUT FROM USER
 read -p "Enter first input :" firstInput
 read -p "Enter second input:" secondInput
@@ -18,3 +21,10 @@ echo "Result:" $resultTwo
 
 resultThree=`echo "scale=2;$firstInput % $secondInput + $thirdInput" | bc`
 echo "Result:" $resultThree
+
+#TO STORE THE DICTIONARY
+ArithmaticOperation[result]=$result
+ArithmaticOperation[resultOne]=$resultOne
+ArithmaticOperation[resultTwo]=$resultTwo
+ArithmaticOperation[resultThree]=$resultThree
+
