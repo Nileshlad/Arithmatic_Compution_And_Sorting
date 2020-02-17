@@ -72,7 +72,7 @@ function ascendingOrderSort()
          fi
       done
    done
-   echo "To data ascending order"${array[@]}
+   echo "To data ascending order:"${array[@]}
 }
 
 #TO FUNCTION CALL FOR SORTING IN ASCENDING ORDER
