@@ -39,11 +39,11 @@ echo "${array[@]}"
 #TO FUNCTION SORTING RESULTS IN DECENDING ORDER
 function descendingOrderSort()
 {
-	for(( index=0; index<${#arry[@]}; index ++ ))
+	for(( index=0; index<${#array[@]}; index ++ ))
 	do
-		for(( indexOne=0; indexOne<${#arry[@]}-1; indexOne ++ ))
+		for(( indexOne=0; indexOne<${#array[@]}-1; indexOne ++ ))
 		do
-			if (( $(echo "${array[indexOne+1]} < ${array[indexOne]}" | bc -l ) ))
+			if (( $(echo "${array[indexOne+1]} > ${array[indexOne]}" | bc -l ) ))
 			then
 				temp=${array[indexOne]}
 				array[indexOne]=${array[indexOne+1]}
@@ -56,4 +56,3 @@ function descendingOrderSort()
 
 #TO FUNCTION CALL FOR SORTING IN DECENDING ORDER
 descendingOrderSort ${array[@]}
-
