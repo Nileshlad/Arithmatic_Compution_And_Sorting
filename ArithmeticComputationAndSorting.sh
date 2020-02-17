@@ -39,23 +39,21 @@ echo "${array[@]}"
 #TO FUNCTION SORTING RESULTS IN DECENDING ORDER
 function descendingOrderSort()
 {
-	for(( index=0; index<=${#arithmaticOperation[@]}; index++ ))
+	for(( index=0; index<${#arry[@]}; index ++ ))
 	do
-		for(( indexOne=0; indexOne<${#arithmaticOperation[@]}-1; indexOne++ ))
+		for(( indexOne=0; indexOne<${#arry[@]}-1; indexOne ++ ))
 		do
-			if (( $(echo "${resultArray[indexOne+1]} > ${resultArray[indexOne]}" |bc ) ))
+			if (( $(echo "${array[indexOne+1]} < ${array[indexOne]}" | bc -l ) ))
 			then
-				temp=${arithmaticOperation[j]}
-				resultArray[indexOne]=${arithmaticOperation[indexOne+1]}
-				resultArray[indexOne+1]=$temp
+				temp=${array[indexOne]}
+				array[indexOne]=${array[indexOne+1]}
+				array[indexOne+1]=$temp
 			fi
 		done
 	done
-	echo ${arithmaticOperation[@]}
+	echo ${array[@]}
 }
 
-#FUNCTION CALL FOR SORTING IN DECENDING ORDER
-descendingOrderSort ${arithmaticOperation[@]}
-
-
+#TO FUNCTION CALL FOR SORTING IN DECENDING ORDER
+descendingOrderSort ${array[@]}
 
