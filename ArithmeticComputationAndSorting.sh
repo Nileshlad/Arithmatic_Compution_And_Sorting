@@ -51,7 +51,7 @@ function descendingOrderSort()
 			fi
 		done
 	done
-	echo ${array[@]}
+	echo "To data descending order"${array[@]}
 }
 
 #TO FUNCTION CALL FOR SORTING IN DECENDING ORDER
