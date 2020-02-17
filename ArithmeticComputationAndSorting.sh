@@ -1,7 +1,7 @@
 #!/bin/bash -x
 echo "--------------------------------Arithmetic Compution And Sorting ----------------------------------"
 
-#TO DECLEAR THE DICTIONARY
+#TO DECLAER THE DICTIONARY
 declare -A arithmaticOperation
 
 #TO TAKING INPUT FROM USER
@@ -36,7 +36,26 @@ done
 #TO PRINT
 echo "${array[@]}"
 
+#TO FUNCTION SORTING RESULTS IN DECENDING ORDER
+function descendingOrderSort()
+{
+	for(( index=0; index<=${#arithmaticOperation[@]}; index++ ))
+	do
+		for(( indexOne=0; indexOne<${#arithmaticOperation[@]}-1; indexOne++ ))
+		do
+			if (( $(echo "${resultArray[indexOne+1]} > ${resultArray[indexOne]}" |bc ) ))
+			then
+				temp=${arithmaticOperation[j]}
+				resultArray[indexOne]=${arithmaticOperation[indexOne+1]}
+				resultArray[indexOne+1]=$temp
+			fi
+		done
+	done
+	echo ${arithmaticOperation[@]}
+}
 
+#FUNCTION CALL FOR SORTING IN DECENDING ORDER
+descendingOrderSort ${arithmaticOperation[@]}
 
 
 
